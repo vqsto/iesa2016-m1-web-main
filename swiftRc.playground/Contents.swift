@@ -71,3 +71,27 @@ class Humain : Personnage {
 let p = Humain(sexe: "Féminin", pouvoir: "Magie")
 p.Ecrire()
 p.manger()
+
+
+class Person {
+    var name : String
+    init (name: String) { self.name = name }
+    
+    func getName() -> String { return self.name }
+    func setName(name : String) { self.name = name }
+}
+
+var romain = Person(name : "Romain")
+romain.getName()
+romain.setName("Axel")
+romain.getName()
+
+
+
+class EquilateralTriangle: NamedShape{
+    var slideLength:Double = 0.0
+    init(length: Double, name :string){
+        self.sideLength = length
+        super.init(name: name)
+        
+}
