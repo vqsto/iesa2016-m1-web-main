@@ -89,9 +89,30 @@ romain.getName()
 
 
 class EquilateralTriangle: NamedShape{
-    var slideLength:Double = 0.0
-    init(length: Double, name :string){
+    var sideLength:Double = 0.0
+    init(length: Double, name : String){
         self.sideLength = length
         super.init(name: name)
+        sidesCount = 3
+    }
+    var perimeter: Double{
+        get{
+            return 3.0 * sideLength
+        }
+        set{
+            sideLength = newValue/3.0
+        }
         
-}
+    }
+    
+
+override func getInfo()->String{
+    return "Length=\(sideLength)"
+}}
+
+var triangle = EquilateralTriangle(length: 3.1, name: "un triangle")
+
+print(triangle)
+triangle.perimeter = 9.9
+print(triangle.sideLength)
+// test
